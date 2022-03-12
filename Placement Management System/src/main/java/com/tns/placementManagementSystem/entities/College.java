@@ -1,6 +1,8 @@
 package com.tns.placementManagementSystem.entities;
 
 import java.io.Serializable;
+import java.util.List;
+
 import javax.persistence.*;
 
 @Entity
@@ -26,9 +28,13 @@ public class College implements Serializable {
 	
 	@Column(name="u_id")
 	private Integer u_id;
+	
+	@OneToMany(mappedBy="college_id")
+	private List<Student> student;
+	
+	@OneToMany(mappedBy="college_id")
+	private List<Placement> placement;
 
-	@OneToOne(mappedBy="college_id")
-	private Student student;
 
 	public long getC_id() {
 		return c_id;
@@ -70,14 +76,25 @@ public class College implements Serializable {
 		this.u_id = u_id;
 	}
 
-	public Student getStudent() {
+
+	public List<Student> getStudent() {
 		return student;
 	}
 
-	public void setStudent(Student student) {
+	public void setStudent(List<Student> student) {
 		this.student = student;
 	}
 
+	
+	public List<Placement> getPlacement() {
+		return placement;
+	}
+
+	public void setPlacement(List<Placement> placement) {
+		this.placement = placement;
+	}
+	
+	
 	@Override
 	public String toString() {
 		return "College [c_id=" + c_id + ", collegeAdmin=" + collegeAdmin + ", collegeName=" + collegeName

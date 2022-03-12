@@ -39,7 +39,7 @@ public class Student implements Serializable{
 	@Column(name="hallTicket")
 	private long hallTicketNo;
 	
-	@OneToOne(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
+	@ManyToOne(cascade=CascadeType.ALL, fetch=FetchType.LAZY)
 	@JoinColumn(name="college_id")
 	private College college_id;
 	

@@ -33,9 +33,11 @@ public class CollegeRepositoryImp implements ICollegeRepository {
 		entityManager.remove(col);
 	}
 	
+	@Override
 	public void beginTransaction() {
 		entityManager.getTransaction().begin();
 	}
+	
 	
 	public void commitTransaction() {
 		entityManager.getTransaction().commit();

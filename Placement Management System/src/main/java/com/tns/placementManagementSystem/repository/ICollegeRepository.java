@@ -12,5 +12,9 @@ public College searchCollege(String college);
 
 public void deleteCollege(long id);
 
+void beginTransaction();
+
+void commitTransaction();
+
 
 }
