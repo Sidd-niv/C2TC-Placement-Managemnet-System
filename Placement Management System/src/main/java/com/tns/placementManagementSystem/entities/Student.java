@@ -1,44 +1,29 @@
 package com.tns.placementManagementSystem.entities;
 
+
 import java.io.Serializable;
-
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Table;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 
 
-// Defining entity class student 
-
-// Defining the POJO class with @Entity
-@Entity 
-@Table(name="student")
-public class Student implements Serializable {
+//Below annotation states that, the below class is a table in DB.
+@Entity
+@Table(name="Student")
+public class Student implements Serializable{
 	
-	// Defining serial id
 	private static final long serialVersionUID = 1L;
-	
-	// Declaring the private class variable
-	// And defining the table columns with @columns
-	
-	//Defining the primary key with @Id
+
 	@Id
 	@Column(name="S_id")
-	private Integer s_id;
-	
+	private long id;
 	
 	@Column(name="sName")
-	private String sName;
+	private String name;
 	
 	@Column(name="collegeName")
 	private String collegeName;
 	
 	@Column(name="rollNo")
-	private Integer rollNo;
+	private long roll;
 	
 	@Column(name="qualification")
 	private String qualification;
@@ -46,37 +31,32 @@ public class Student implements Serializable {
 	@Column(name="course")
 	private String course;
 	
+	@OneToOne(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
+	@JoinColumn(name="cert_id")
+	private Certificate certificate;
+	
 	@Column(name="hallTicket")
-	private Integer hallTicket;
+	private long hallTicketNo;
 	
-//	@OneToOne(mappedBy="cert_id")
-//	private Student student;
-	
-	@OneToOne(cascade=CascadeType.ALL)
-	@JoinColumn(name="cert_id")
-	private Certificate cert_id;
-	
-	@OneToOne(cascade=CascadeType.ALL,  fetch=FetchType.EAGER)
-	@JoinColumn(name="cert_id")
+	@OneToOne(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
+	@JoinColumn(name="college_id")
 	private College college_id;
-
 	
-	// Defining the getter and setter methods to read and write private methods 
-
-	public Integer getS_id() {
-		return s_id;
+	
+	public long getId() {
+		return id;
 	}
 
-	public void setS_id(Integer s_id) {
-		this.s_id = s_id;
+	public void setId(long id) {
+		this.id = id;
 	}
 
-	public String getsName() {
-		return sName;
+	public String getName() {
+		return name;
 	}
 
-	public void setsName(String sName) {
-		this.sName = sName;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public String getCollegeName() {
@@ -87,12 +67,12 @@ public class Student implements Serializable {
 		this.collegeName = collegeName;
 	}
 
-	public Integer getRollNo() {
-		return rollNo;
+	public long getRoll() {
+		return roll;
 	}
 
-	public void setRollNo(Integer rollNo) {
-		this.rollNo = rollNo;
+	public void setRoll(long roll) {
+		this.roll = roll;
 	}
 
 	public String getQualification() {
@@ -111,20 +91,20 @@ public class Student implements Serializable {
 		this.course = course;
 	}
 
-	public Integer getHallTicket() {
-		return hallTicket;
+	public Certificate getCertificate() {
+		return certificate;
 	}
 
-	public void setHallTicket(Integer hallTicket) {
-		this.hallTicket = hallTicket;
+	public void setCertificate(Certificate certificate) {
+		this.certificate = certificate;
 	}
 
-	public Certificate getCert_id() {
-		return cert_id;
+	public long getHallTicketNo() {
+		return hallTicketNo;
 	}
 
-	public void setCert_id( Certificate i) {
-		this.cert_id = i;
+	public void setHallTicketNo(long hallTicketNo) {
+		this.hallTicketNo = hallTicketNo;
 	}
 
 	public College getCollege_id() {
@@ -134,7 +114,9 @@ public class Student implements Serializable {
 	public void setCollege_id(College college_id) {
 		this.college_id = college_id;
 	}
+
 	
 	
 	
+
 }

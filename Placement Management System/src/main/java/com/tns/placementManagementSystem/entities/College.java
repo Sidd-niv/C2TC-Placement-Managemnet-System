@@ -1,32 +1,18 @@
 package com.tns.placementManagementSystem.entities;
 
-
 import java.io.Serializable;
-
-import javax.persistence.Entity;
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Table;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 
 @Entity
-@Table(name="college")
-public class College implements Serializable{
-	
-	
-	// Defining serializale_id 
-	private static final long serialVersionUID = 1L;
-		
+@Table(name="")
+public class College implements Serializable {
 
-	// Declaring the private class variable
-	// And defining the table columns with @columns
-		
-	//Defining the primary key with @Id
+	private static final long serialVersionUID = 1L;
+	
 	@Id
 	@Column(name="college_id")
-	private String college_id;
+	private long c_id;
+	
 	
 	@Column(name="collegeAdmin")
 	private String collegeAdmin;
@@ -37,18 +23,19 @@ public class College implements Serializable{
 	@Column(name="location")
 	private String location;
 	
-	@Column(name="p_id")
-	private Integer p_id;
 	
 	@Column(name="u_id")
 	private Integer u_id;
 
-	public String getCollege_id() {
-		return college_id;
+	@OneToOne(mappedBy="college_id")
+	private Student student;
+
+	public long getC_id() {
+		return c_id;
 	}
 
-	public void setCollege_id(String college_id) {
-		this.college_id = college_id;
+	public void setC_id(long c_id) {
+		this.c_id = c_id;
 	}
 
 	public String getCollegeAdmin() {
@@ -75,14 +62,6 @@ public class College implements Serializable{
 		this.location = location;
 	}
 
-	public Integer getP_id() {
-		return p_id;
-	}
-
-	public void setP_id(Integer p_id) {
-		this.p_id = p_id;
-	}
-
 	public Integer getU_id() {
 		return u_id;
 	}
@@ -90,8 +69,14 @@ public class College implements Serializable{
 	public void setU_id(Integer u_id) {
 		this.u_id = u_id;
 	}
+
+	public Student getStudent() {
+		return student;
+	}
+
+	public void setStudent(Student student) {
+		this.student = student;
+	}
 	
 	
-
-
 }
