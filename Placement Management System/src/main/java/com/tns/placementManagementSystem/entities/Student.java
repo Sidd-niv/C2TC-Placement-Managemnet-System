@@ -10,6 +10,7 @@ import javax.persistence.*;
 @Table(name="Student")
 public class Student implements Serializable{
 	
+
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -116,7 +117,12 @@ public class Student implements Serializable{
 	}
 
 	
-	
+	@Override
+	public String toString() {
+		return "Student [id=" + id + ", name=" + name + ", collegeName=" + collegeName + ", roll=" + roll
+				+ ", qualification=" + qualification + ", course=" + course + ", certificate=" + certificate
+				+ ", hallTicketNo=" + hallTicketNo + ", college_id=" + college_id + "]";
+	}
 	
 
 }

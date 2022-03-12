@@ -3,11 +3,11 @@ package com.tns.placementManagementSystem.repository;
 import javax.persistence.EntityManager;
 import com.tns.placementManagementSystem.entities.College;
 
-public class CollegeRepositroyImp implements ICollegeRepository {
+public class CollegeRepositoryImp implements ICollegeRepository {
 
 	private EntityManager entityManager;
 	
-	public CollegeRepositroyImp() {
+	public CollegeRepositoryImp() {
 		entityManager  = JPAUtil.getEntityManager();
 	}
 
@@ -31,6 +31,14 @@ public class CollegeRepositroyImp implements ICollegeRepository {
 	public void deleteCollege(long id) {
 		College col = entityManager.find(College.class, id);
 		entityManager.remove(col);
+	}
+	
+	public void beginTransaction() {
+		entityManager.getTransaction().begin();
+	}
+	
+	public void commitTransaction() {
+		entityManager.getTransaction().commit();
 	}
 
 }

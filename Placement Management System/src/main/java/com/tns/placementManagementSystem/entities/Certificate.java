@@ -48,7 +48,12 @@ public class Certificate implements Serializable{
 	public void setCollegeName(String collegeName) {
 		this.collegeName = collegeName;
 	}
-	
-	
 
+	@Override
+	public String toString() {
+		return "Certificate [c_id=" + c_id + ", year=" + year + ", collegeName=" + collegeName + ", student=" + student
+				+ "]";
+	}
+	
+	
 }

@@ -7,52 +7,47 @@ import com.tns.placementManagementSystem.entities.Student;
 
 public class StudentServiceImp implements IStudentService{
 	
-	private IStudentRepositroy
+	private IStudentRepository dao;
 
-	public StudentServiceImp() {
-		
+	public StudentServiceImp() 
+	{
+		dao = new StudentRepositoryImp();
 	}
 
 	@Override
-	public Student addStudent(Student student) {
-		// TODO Auto-generated method stub
-		return null;
+	public void addStudent(Student student) {
+		dao.beginTrancsaction();
+		dao.addStudent(student);
+		dao.commitTransaction();
 	}
 
 	@Override
-	public Student updateStudent(Student student) {
-		// TODO Auto-generated method stub
-		return null;
+	public void updateStudent(Student student) {
+		dao.beginTrancsaction();
+		dao.updateStudent(student);
+		dao.commitTransaction();
 	}
 
 	@Override
 	public Student searchStudentById(long id) {
-		// TODO Auto-generated method stub
-		return null;
+		Student student = dao.searchStudentById(id);
+		return student;
 	}
 
 	@Override
 	public Student searchStudentByHallTicket(long id) {
-		// TODO Auto-generated method stub
-		return null;
+		Student student = dao.searchStudentByHallTicket(id);
+		return student;
 	}
 
-	@Override
-	public Certificate addCertificate(Certificate certificate) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+
 
 	@Override
-	public Certificate updateCertificate(Certificate certificate) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public boolean deleteStudent(long id) {
-		// TODO Auto-generated method stub
-		return false;
+	public void deleteStudent(long id) {
+		dao.beginTrancsaction();
+		dao.deleteStudent(id);
+		dao.commitTransaction();
+		
 	}
 
 }

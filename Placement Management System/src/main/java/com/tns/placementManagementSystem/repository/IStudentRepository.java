@@ -13,4 +13,8 @@ public interface IStudentRepository {
 	public Student searchStudentByHallTicket(long ticketNo);
 	
 	public void deleteStudent(long id);
+
+	public void beginTrancsaction();
+	
+	public void commitTransaction();
 }

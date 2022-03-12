@@ -47,11 +47,14 @@ public class StudentRepositoryImp implements IStudentRepository{
 		entityManager.remove(student);
 	
 	}
-	
-	public void beginTransaction() {
+
+	@Override
+	public void beginTrancsaction() {
 		entityManager.getTransaction().begin();
+		
 	}
-	
+
+	@Override
 	public void commitTransaction() {
 		entityManager.getTransaction().commit();
 		

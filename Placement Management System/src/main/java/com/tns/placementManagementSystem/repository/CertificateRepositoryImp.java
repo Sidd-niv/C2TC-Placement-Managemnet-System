@@ -37,5 +37,13 @@ public class CertificateRepositoryImp implements ICertificateRepository {
 		entityManager.remove(cret);
 		
 	}
+	
+	public void beginTransaction() {
+		entityManager.getTransaction().begin();
+	}
+	
+	public void commitTransaction() {
+		entityManager.getTransaction().commit();
+	}
 
 }

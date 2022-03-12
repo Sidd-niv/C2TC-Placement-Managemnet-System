@@ -77,6 +77,14 @@ public class College implements Serializable {
 	public void setStudent(Student student) {
 		this.student = student;
 	}
+
+	@Override
+	public String toString() {
+		return "College [c_id=" + c_id + ", collegeAdmin=" + collegeAdmin + ", collegeName=" + collegeName
+				+ ", location=" + location + ", u_id=" + u_id + ", student=" + student + "]";
+	}
+	
+	
 	
 	
 }

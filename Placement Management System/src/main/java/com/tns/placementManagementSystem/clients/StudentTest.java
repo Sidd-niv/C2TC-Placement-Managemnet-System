@@ -22,32 +22,40 @@ public class StudentTest {
 		Certificate cret = new Certificate();
 		College col = new College();
 		
-		student.setId(2);
-		student.setName("Siddhant");
-		student.setCollegeName("Pillai");
-		student.setCourse("EXTC");
-		student.setHallTicketNo(41455);
-		student.setQualification("B.E");
-		student.setRoll(2);
-		
-		cret.setC_id(2);
-		cret.setCollegeName("Pillai");
-		cret.setYear(2021);
-		student.setCertificate(cret);
-		
-		col.setC_id(2);
-		col.setCollegeAdmin("XYZ");
-		col.setCollegeName("Pillai");
-		col.setLocation("Mumbai");
-		col.setU_id(2);
-		
-		student.setCollege_id(col);
+		student = em.find(Student.class, 2L);
+		student.setName("Sidd Niv");
 		
 		
 		
 		
+//		student.setId(2);
+//		student.setName("Siddhant");
+//		student.setCollegeName("Pillai");
+//		student.setCourse("EXTC");
+//		student.setHallTicketNo(41455);
+//		student.setQualification("B.E");
+//		student.setRoll(2);
+//		
+//		cret.setC_id(2);
+//		cret.setCollegeName("Pillai");
+//		cret.setYear(2021);
+//		student.setCertificate(cret);
+//		
+//		col.setC_id(2);
+//		col.setCollegeAdmin("XYZ");
+//		col.setCollegeName("Pillai");
+//		col.setLocation("Mumbai");
+//		col.setU_id(2);
+//		
+//		student.setCollege_id(col);
+//		
 		
-		em.persist(student);
+		
+		
+		
+		
+		
+		em.merge(student);
 		em.getTransaction().commit();
 		
 		System.out.println("Added one student with address to database.");
