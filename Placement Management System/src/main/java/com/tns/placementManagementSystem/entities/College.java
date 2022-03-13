@@ -25,9 +25,9 @@ public class College implements Serializable {
 	@Column(name="location")
 	private String location;
 	
-	
-	@Column(name="u_id")
-	private Integer u_id;
+	@OneToOne(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
+	@JoinColumn(name="u_id")
+	private User u_id;
 	
 	@OneToMany(mappedBy="college_id")
 	private List<Student> student;
@@ -35,44 +35,54 @@ public class College implements Serializable {
 	@OneToMany(mappedBy="college_id")
 	private List<Placement> placement;
 
-
+	
 	public long getC_id() {
 		return c_id;
 	}
+
 
 	public void setC_id(long c_id) {
 		this.c_id = c_id;
 	}
 
+
 	public String getCollegeAdmin() {
 		return collegeAdmin;
 	}
+
 
 	public void setCollegeAdmin(String collegeAdmin) {
 		this.collegeAdmin = collegeAdmin;
 	}
 
+
 	public String getCollegeName() {
 		return collegeName;
 	}
+
+
 
 	public void setCollegeName(String collegeName) {
 		this.collegeName = collegeName;
 	}
 
+
 	public String getLocation() {
 		return location;
 	}
+
 
 	public void setLocation(String location) {
 		this.location = location;
 	}
 
-	public Integer getU_id() {
+
+	public User getU_id() {
 		return u_id;
 	}
 
-	public void setU_id(Integer u_id) {
+
+	public void setU_id(User u_id) {
 		this.u_id = u_id;
 	}
 
@@ -85,22 +95,22 @@ public class College implements Serializable {
 		this.student = student;
 	}
 
-	
+
 	public List<Placement> getPlacement() {
 		return placement;
 	}
 
+
 	public void setPlacement(List<Placement> placement) {
 		this.placement = placement;
 	}
-	
-	
+
+
 	@Override
 	public String toString() {
 		return "College [c_id=" + c_id + ", collegeAdmin=" + collegeAdmin + ", collegeName=" + collegeName
 				+ ", location=" + location + ", u_id=" + u_id + ", student=" + student + "]";
 	}
-	
 	
 	
 	
