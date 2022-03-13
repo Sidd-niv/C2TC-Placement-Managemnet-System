@@ -15,7 +15,7 @@ public class Certificate implements Serializable{
     private long c_id;
 	
 	@Column(name="Year")
-    private int year;
+    private Long year;
 	
 	
 	@Column(name="collegeName")
@@ -32,11 +32,11 @@ public class Certificate implements Serializable{
 		this.c_id = c_id;
 	}
 
-	public int getYear() {
+	public Long getYear() {
 		return year;
 	}
 
-	public void setYear(int year) {
+	public void setYear(Long year) {
 		this.year = year;
 	}
 

@@ -16,65 +16,64 @@ public class StudentTest {
 
 	public static void main(String[] args) {
 		
-		EntityManagerFactory factory = Persistence.createEntityManagerFactory("JPA-PU");
-		EntityManager em = factory.createEntityManager();
-		em.getTransaction().begin();
-		
-		Student student = new Student();
-		Student student2 = new Student();
-		Certificate cret = new Certificate();
-		Certificate cret2 = new Certificate();
-		College col = new College();
-		StudentServiceImp obj = new StudentServiceImp();
-		
-//		student = em.find(Student.class, 2L);
-//		student.setName("Sidd Niv");
-		
-		
-		
-		
-		student.setId(3);
-		student.setName("Suraj");
-		student.setCollegeName("Pillai");
-		student.setCourse("EXTC");
-		student.setHallTicketNo(46455);
-		student.setQualification("B.E");
-		student.setRoll(3);
-		
-		cret.setC_id(3);
-		cret.setCollegeName(student.getCollegeName());
-		cret.setYear(2021);
-		student.setCertificate(cret);
-		
-		student2.setId(4);
-		student2.setName("Aditya");
-		student2.setCollegeName("Pillai");
-		student2.setCourse("EXTC");
-		student2.setHallTicketNo(66455);
-		student2.setQualification("B.E");
-		student2.setRoll(4);
-		
-		cret2.setC_id(4);
-		cret.setCollegeName(student.getCollegeName());
-		cret.setYear(2021);
-		student2.setCertificate(cret2);
-		
-		col.setC_id(3);
-		col.setCollegeAdmin("XYZ");
-		col.setCollegeName("Pillai");
-		col.setLocation("Mumbai");
-		col.setU_id(3);
-		
-		student.setCollege_id(col);
-		student2.setCollege_id(col);
-		
-		List<Student> obj2 = List.of(student, student2);
-		
-		col.setStudent(obj2);
-		
-		
-		em.persist(student);
-		em.persist(student2);
+//		EntityManagerFactory factory = Persistence.createEntityManagerFactory("JPA-PU");
+//		EntityManager em = factory.createEntityManager();
+//		em.getTransaction().begin();
+//		
+//		Student student = new Student();
+//		Student student2 = new Student();
+//		Certificate cret = new Certificate();
+//		Certificate cret2 = new Certificate();
+//		College col = new College();
+//		StudentServiceImp obj = new StudentServiceImp();
+//		
+////		student = em.find(Student.class, 2L);
+////		student.setName("Sidd Niv");
+//		
+//		
+//		
+//		
+//		student.setId(3);
+//		student.setName("Suraj");
+//		student.setCollegeName("Pillai");
+//		student.setCourse("EXTC");
+//		student.setHallTicketNo(46455);
+//		student.setQualification("B.E");
+//		student.setRoll(3);
+//		
+//		cret.setC_id(3);
+//		cret.setCollegeName(student.getCollegeName());
+//		cret.setYear(2021L);
+//		student.setCertificate(cret);
+//		
+//		student2.setId(4);
+//		student2.setName("Aditya");
+//		student2.setCollegeName("Pillai");
+//		student2.setCourse("EXTC");
+//		student2.setHallTicketNo(66455);
+//		student2.setQualification("B.E");
+//		student2.setRoll(4);
+//		
+//		cret2.setC_id(4);
+//		cret.setCollegeName(student.getCollegeName());
+//		cret.setYear(2021L);
+//		student2.setCertificate(cret2);
+//		
+//		col.setC_id(3);
+//		col.setCollegeAdmin("XYZ");
+//		col.setCollegeName("Pillai");
+//		col.setLocation("Mumbai");
+//		
+//		student.setCollege_id(col);
+//		student2.setCollege_id(col);
+//		
+//		List<Student> obj2 = List.of(student, student2);
+//		
+//		col.setStudent(obj2);
+//		
+//		
+//		em.persist(student);
+//		em.persist(student2);
 		
 		
 		
@@ -86,12 +85,12 @@ public class StudentTest {
 		
 		
 //		em.remove(student);
-		em.getTransaction().commit();
-		
-		System.out.println("Added one student with address to database.");
-		em.close();
-		factory.close();
-		
+//		em.getTransaction().commit();
+////		
+//		System.out.println("Added one student with address to database.");
+//		em.close();
+//		factory.close();
+//		
 	}
 
 }

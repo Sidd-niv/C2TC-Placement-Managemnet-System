@@ -1,7 +1,12 @@
 package com.tns.placementManagementSystem.repository;
 
 import com.tns.placementManagementSystem.entities.User;
-import javax.persistence.EntityManager; 
+
+import java.util.List;
+
+
+import javax.persistence.EntityManager;
+import javax.persistence.TypedQuery; 
 
 public class UserRepositoryImp implements IUserRepository{
 
@@ -39,9 +44,15 @@ public class UserRepositoryImp implements IUserRepository{
 	}
 
 	@Override
-	public User login(User user) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<String> login(String userName, String password) {
+		String queryString = "SELECT u.uName, u.uPassword FROM user u where u.uName= :uname AND u.uPassword = :upass";
+		TypedQuery<String> query = entityManager.createQuery(queryString, String.class);
+		query.setParameter("uname", userName);
+		query.setParameter("upass", password);
+		List<String> userDetials = query.getResultList();
+		return userDetials;
 	}
+	
+
 
 }

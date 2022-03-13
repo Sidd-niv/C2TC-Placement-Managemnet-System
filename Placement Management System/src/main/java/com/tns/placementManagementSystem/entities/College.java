@@ -25,9 +25,10 @@ public class College implements Serializable {
 	@Column(name="location")
 	private String location;
 	
-	@OneToOne(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
-	@JoinColumn(name="u_id")
-	private User u_id;
+//	@OneToOne(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
+//	@JoinColumn(name="u_id")
+	@Column(name="u_id")
+	private Long u_id;
 	
 	@OneToMany(mappedBy="college_id")
 	private List<Student> student;
@@ -36,9 +37,15 @@ public class College implements Serializable {
 	private List<Placement> placement;
 
 	
+	
+
+
 	public long getC_id() {
 		return c_id;
 	}
+
+
+
 
 
 	public void setC_id(long c_id) {
@@ -46,14 +53,23 @@ public class College implements Serializable {
 	}
 
 
+
+
+
 	public String getCollegeAdmin() {
 		return collegeAdmin;
 	}
 
 
+
+
+
 	public void setCollegeAdmin(String collegeAdmin) {
 		this.collegeAdmin = collegeAdmin;
 	}
+
+
+
 
 
 	public String getCollegeName() {
@@ -62,9 +78,14 @@ public class College implements Serializable {
 
 
 
+
+
 	public void setCollegeName(String collegeName) {
 		this.collegeName = collegeName;
 	}
+
+
+
 
 
 	public String getLocation() {
@@ -72,28 +93,47 @@ public class College implements Serializable {
 	}
 
 
+
+
+
 	public void setLocation(String location) {
 		this.location = location;
 	}
 
 
-	public User getU_id() {
+
+
+
+	public Long getU_id() {
 		return u_id;
 	}
 
 
-	public void setU_id(User u_id) {
+
+
+
+	public void setU_id(Long u_id) {
 		this.u_id = u_id;
 	}
+
+
+
 
 
 	public List<Student> getStudent() {
 		return student;
 	}
 
+
+
+
+
 	public void setStudent(List<Student> student) {
 		this.student = student;
 	}
+
+
+
 
 
 	public List<Placement> getPlacement() {
@@ -101,9 +141,15 @@ public class College implements Serializable {
 	}
 
 
+
+
+
 	public void setPlacement(List<Placement> placement) {
 		this.placement = placement;
 	}
+
+
+
 
 
 	@Override

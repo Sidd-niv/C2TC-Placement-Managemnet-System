@@ -1,5 +1,7 @@
 package com.tns.placementManagementSystem.repository;
 
+import java.util.List;
+
 import com.tns.placementManagementSystem.entities.User;
 
 public interface IUserRepository {
@@ -10,7 +12,7 @@ public interface IUserRepository {
 	
 	public void deleteUser(long id);
 	
-	public User login(User user);
+	public List<String> login(String userName, String password);
 	
     public void beginTrancsaction();
 	

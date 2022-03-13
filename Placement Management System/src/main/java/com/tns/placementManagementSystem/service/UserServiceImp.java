@@ -1,5 +1,7 @@
 package com.tns.placementManagementSystem.service;
 
+import java.util.List;
+
 import com.tns.placementManagementSystem.entities.User;
 import com.tns.placementManagementSystem.repository.IUserRepository;
 import com.tns.placementManagementSystem.repository.UserRepositoryImp;
@@ -29,21 +31,16 @@ public class UserServiceImp implements IUserService {
 	}
 
 	@Override
-	public userLogin(String user, String password) {
-		
-		return null;
+	public List<String> login(String user, String password) {
+		List<String> check = dao.login(user, password);
+		return check;
 	}
 
 	@Override
 	public void logOut() {
-		// TODO Auto-generated method stub
+		System.out.println("Logout.....");
 		
 	}
 
-	@Override
-	public User login(String user, String password) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 }

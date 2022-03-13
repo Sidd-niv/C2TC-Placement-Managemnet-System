@@ -28,9 +28,6 @@ public class User implements Serializable{
 	@Column(name="uPassword")
 	private String uPassword;
 	
-	@OneToOne(mappedBy="u_id")
-	private College college;
-
 	public Long getUser_id() {
 		return user_id;
 	}
@@ -63,13 +60,7 @@ public class User implements Serializable{
 		this.uPassword = uPassword;
 	}
 
-	public College getCollege() {
-		return college;
-	}
 
-	public void setCollege(College college) {
-		this.college = college;
-	}
 
 	
 	
