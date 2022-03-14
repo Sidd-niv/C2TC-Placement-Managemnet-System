@@ -1,37 +1,33 @@
 package com.tns.placementManagementSystem.clients;
 
-import com.tns.placementManagementSystem.entities.Certificate;
-import com.tns.placementManagementSystem.entities.College;
-import com.tns.placementManagementSystem.entities.Student;
-import com.tns.placementManagementSystem.service.IStudentService;
-import com.tns.placementManagementSystem.service.StudentServiceImp;
+import javax.persistence.NoResultException;
+
+import com.tns.placementManagementSystem.service.IUserService;
+import com.tns.placementManagementSystem.service.UserServiceImp;
 
 public class TestApp {
 
 	
 	public static void main(String[] args) {
-
-//		
+		
 		
 		PlacementManagementSystemCreateAppTest system = new  PlacementManagementSystemCreateAppTest();
 		
-//		String name, Long id, String couserName, String collName, Long hallTicket, Long roll, String qual, Long certId, Long year
-		system.addStudentData("Siddhant", 3L, "Extc", "Pillai", 103L, 3L, "B.E", 3L, 2021L);
 		
-		
-//		Long collId, String adminName, String collName, String loc, Long uid
-		system.addCollegeData(3L, "XYZ1", "xyzz1", "Mumbai", 1L);
-		system.saveStudentData();
-//		
+//		Long userid, String userName, String userPass, String userType
+//		system.registerUser(1L, "M.K", "1234", "University");
+//		system.saveRegisterUserData();
 //		System.out.println("Done");
 		
-//		College col = new College();
-//		col.setC_id(2);
-//		
-//		Long pid, String date, String pname, String qual, String pcol,Long year
-//		system.addPlacementData(2L, "3 Dec 2021", "TCS", "B.E", "Pillai",2021L);
-//		system.savePlacementData();
-//		System.out.println("Done");
+		
+		IUserService userService = new UserServiceImp();
+		try {
+			String response = userService.login("M.5", "1234");
+			System.out.println(response);
+		}catch (NoResultException ex)
+		{
+			System.out.println("Please Register---");
+		}
 		
 		
 		

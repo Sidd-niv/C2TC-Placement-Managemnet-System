@@ -12,7 +12,7 @@ public interface IUserService {
 	
 	public void updateUser(User user);
 	
-	public List<String> login(String user, String password);
+	public String login(String user, String password);
 	
 	public void logOut();
 

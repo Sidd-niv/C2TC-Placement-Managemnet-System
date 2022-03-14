@@ -1,6 +1,9 @@
 package com.tns.placementManagementSystem.entities;
 
+//Importing this interface to make serial id 
 import java.io.Serializable;
+
+//Importing annotation from persistence 
 import javax.persistence.*;
 
 
@@ -20,6 +23,7 @@ public class Certificate implements Serializable{
 	@Column(name="cert_id")
     private long c_id;
 	
+	// Column annotation we are indicating the actual name of column of relational world.
 	@Column(name="Year")
     private Long year;
 	
@@ -58,6 +62,7 @@ public class Certificate implements Serializable{
 		this.collegeName = collegeName;
 	}
 
+	// Overriding toString method to read the object value at the time of print statement
 	@Override
 	public String toString() {
 		return "Certificate [c_id=" + c_id + ", year=" + year + ", collegeName=" + collegeName + ", student=" + student

@@ -31,10 +31,14 @@ public class UserServiceImp implements IUserService {
 	}
 
 	@Override
-	public List<String> login(String user, String password) {
+	public String login(String user, String password) {
 		List<String> check = dao.login(user, password);
-		return check;
+		if((user == check.get(0))&&(password == check.get(1))){
+			return "Welcome";
+		}
+		return "User Invalid";
 	}
+	
 
 	@Override
 	public void logOut() {

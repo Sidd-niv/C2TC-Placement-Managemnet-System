@@ -1,5 +1,7 @@
 package com.tns.placementManagementSystem.clients;
 
+import javax.persistence.NoResultException;
+
 import com.tns.placementManagementSystem.entities.College;
 import com.tns.placementManagementSystem.entities.Placement;
 import com.tns.placementManagementSystem.entities.Student;
@@ -25,24 +27,40 @@ public class PlacementManagementSystemReadAppTest {
 		
 		
 		// Defining Student class object
-		Student student = new Student();
+//		Student student = new Student();
 		
-		student = studentService.searchStudentById(1);
-		System.out.println(student.getName());
+//		student = studentService.searchStudentById(1);
+//		System.out.println("Name : "+student.getName()+"\n"+ "Course: "+student.getCourse()+"\n"+"College: "+student.getCollegeName()+"\n"+
+//		                    "Hall Ticket no: "+student.getHallTicketNo()+"\n"+"Roll no: "+student.getRoll()+"\n"+
+//				            "Qualification: "+student.getQualification());
 		
-//		String Name = studentService.searchStudentByHallTicket(4211345);
-//		System.out.println(Name);
+//		try {
+//			String Name = studentService.searchStudentByHallTicket(4);
+//			System.out.println(Name);
+//		}catch (NoResultException ex) {
+//			System.out.println("Invalid student Hall ticket no OR So such data available in database");
+//		}
+		
 //		College college = new College();
-//		college = collegeService.findCollegeById(null);
+//		college = collegeService.searchCollege("Pillai");
+//		
+////		college = collegeService.findCollegeById(1L);
+//		System.out.println("College Name: "+college.getCollegeName()+"\n"+"College Admin Name: "+college.getCollegeAdmin()+"\n"+
+//				           "College Location: "+college.getLocation());
 
 		
 //		Placement placement = new Placement();
 //		placement = placeService.searchPlacement(1);
-//		System.out.println(placement.getCollegeName());
-	
+//		System.out.println("Company Name: "+placement.getpName()+"\nPlacement schedule no : "+placement.getpDate()+"\nQualification Required: "+placement.getQualification()+
+//				           "\nPassout Batch Year"+placement.getYear());
+//	
 //		User user = new User();
-//		user = userService.findUserById(null);
+//		user = userService.findUserById(1L);
+//		System.out.println("User Name: "+user.getuName()+"\nOrganization: "+user.getuType());
+		
+		
 
 	}
+	
 
 }

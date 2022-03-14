@@ -17,12 +17,17 @@ import javax.persistence.Table;
 @Table(name="Placement")
 public class Placement implements Serializable {
 	
+	// Defining serial_id 
 	private static final long serialVersionUID = 1L;
 	
-	@Id	// Primary key
+	//Defining private instance variable
+
+	// With Id annotation we are indicating that this is a primary key field
+	@Id	
 	@Column(name="p_id")
 	private Long p_id;
 	
+	// Column annotation we are indicating the actual name of column of relational world.
 	@Column(name="pName")
 	private String pName;
 	
@@ -38,10 +43,12 @@ public class Placement implements Serializable {
 	@Column(name="collegeName")
 	private String collegeName;
 	
+	// Declaring the Many to one relationship.
 	@ManyToOne(cascade=CascadeType.ALL, fetch=FetchType.LAZY)
 	@JoinColumn(name="college_id")
 	private College college_id;
 
+	// Defining getter and setter methods to read and write private instance variable.
 	public Long getP_id() {
 		return p_id;
 	}
@@ -97,9 +104,14 @@ public class Placement implements Serializable {
 	public void setCollegeName(String collegeName) {
 		this.collegeName = collegeName;
 	}
-	
-	
-	
+
+	// Overriding toString method to read the object value at the time of print statement
+	@Override
+	public String toString() {
+		return "Placement [p_id=" + p_id + ", pName=" + pName + ", pDate=" + pDate + ", qualification=" + qualification
+				+ ", year=" + year + ", collegeName=" + collegeName + ", college_id=" + college_id + "]";
+	}
+
 	
 
 }

@@ -1,8 +1,11 @@
 package com.tns.placementManagementSystem.entities;
 
-
+//Importing this interface to make serial id 
 import java.io.Serializable;
+
+//Importing annotation from persistence 
 import javax.persistence.*;
+
 
 
 //Below annotation states that, the below class is a table in DB.
@@ -13,13 +16,14 @@ public class Student implements Serializable{
 	// Defining serializale_id 
 	private static final long serialVersionUID = 1L;
 
-	//Defining private instance variable
-
+	//Declaring private instance variable
+	
 	// With Id annotation we are indicating that this is a primary key field
 	@Id
 	@Column(name="S_id")
 	private long id;
 	
+	// Column annotation we are indicating the actual name of column of relational world.
 	@Column(name="sName")
 	private String name;
 	
@@ -120,7 +124,7 @@ public class Student implements Serializable{
 		this.college_id = college_id;
 	}
 
-	
+	// Overriding toString method to read the object value at the time of print statement
 	@Override
 	public String toString() {
 		return "Student [id=" + id + ", name=" + name + ", collegeName=" + collegeName + ", roll=" + roll

@@ -1,7 +1,7 @@
 package com.tns.placementManagementSystem.repository;
 
-import java.util.List;
 
+//Importing required entity class and interfaces 
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 
@@ -23,6 +23,7 @@ public class StudentRepositoryImp implements IStudentRepository{
 	@Override
 	public void addStudent(Student student) 
 	{
+		// persist method will add data from required schema
 		entityManager.persist(student);
 	}
 
@@ -31,6 +32,7 @@ public class StudentRepositoryImp implements IStudentRepository{
 	@Override
 	public void updateStudent(Student student) 
 	{
+		// merge method will update data from required schema
 		entityManager.merge(student);
 		
 	}
@@ -45,6 +47,7 @@ public class StudentRepositoryImp implements IStudentRepository{
 	@Override
 	public String searchStudentByHallTicket(long ticketNo) 
 	{
+	
 		String queryString = "select s.name from Student s where s.hallTicketNo =: hall";
 		TypedQuery<String> query = entityManager.createQuery(queryString, String.class);
 		query.setParameter("hall", ticketNo);
@@ -55,9 +58,11 @@ public class StudentRepositoryImp implements IStudentRepository{
 	@Override
 	public void deleteStudent(Student student)
 	{
+		// remove method will  data from required schema
 		entityManager.remove(student);
 	}
 
+	// Methods to commit the data 
 	@Override
 	public void beginTrancsaction() {
 		entityManager.getTransaction().begin();

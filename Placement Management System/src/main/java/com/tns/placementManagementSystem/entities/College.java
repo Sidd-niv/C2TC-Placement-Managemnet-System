@@ -1,6 +1,8 @@
 package com.tns.placementManagementSystem.entities;
 
+//Importing this interface to make serial id 
 import java.io.Serializable;
+//Importing this interface for reference 
 import java.util.List;
 
 import javax.persistence.*;
@@ -8,7 +10,7 @@ import javax.persistence.*;
 
 //Below annotation states that, the below class is a table in DB.
 @Entity
-@Table(name="")
+@Table(name="College")
 public class College implements Serializable {
 
 	
@@ -23,7 +25,7 @@ public class College implements Serializable {
 	@Column(name="college_id")
 	private long c_id;
 	
-	
+	// Column annotation we are indicating the actual name of column of relational world.
 	@Column(name="collegeAdmin")
 	private String collegeAdmin;
 	
@@ -41,51 +43,32 @@ public class College implements Serializable {
 	@OneToMany(mappedBy="college_id")
 	private List<Student> student;
 	
+	// Mapping the relations
 	@OneToMany(mappedBy="college_id")
 	private List<Placement> placement;
 
-	
-	
 
 	// Defining getter and setter methods to read and write private instance variable.
 	public long getC_id() {
 		return c_id;
 	}
 
-
-
-
-
 	public void setC_id(long c_id) {
 		this.c_id = c_id;
 	}
-
-
-
-
 
 	public String getCollegeAdmin() {
 		return collegeAdmin;
 	}
 
-
-
-
-
+	
 	public void setCollegeAdmin(String collegeAdmin) {
 		this.collegeAdmin = collegeAdmin;
 	}
 
-
-
-
-
 	public String getCollegeName() {
 		return collegeName;
 	}
-
-
-
 
 
 	public void setCollegeName(String collegeName) {
@@ -94,14 +77,9 @@ public class College implements Serializable {
 
 
 
-
-
 	public String getLocation() {
 		return location;
 	}
-
-
-
 
 
 	public void setLocation(String location) {
@@ -109,31 +87,17 @@ public class College implements Serializable {
 	}
 
 
-
-
-
 	public Long getU_id() {
 		return u_id;
 	}
-
-
-
-
 
 	public void setU_id(Long u_id) {
 		this.u_id = u_id;
 	}
 
-
-
-
-
 	public List<Student> getStudent() {
 		return student;
 	}
-
-
-
 
 
 	public void setStudent(List<Student> student) {
@@ -141,15 +105,9 @@ public class College implements Serializable {
 	}
 
 
-
-
-
 	public List<Placement> getPlacement() {
 		return placement;
 	}
-
-
-
 
 
 	public void setPlacement(List<Placement> placement) {
@@ -157,9 +115,7 @@ public class College implements Serializable {
 	}
 
 
-
-
-
+	// Overriding toString method to read the object value at the time of print statement
 	@Override
 	public String toString() {
 		return "College [c_id=" + c_id + ", collegeAdmin=" + collegeAdmin + ", collegeName=" + collegeName
