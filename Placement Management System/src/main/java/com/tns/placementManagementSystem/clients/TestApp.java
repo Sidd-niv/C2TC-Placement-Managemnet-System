@@ -10,45 +10,22 @@ public class TestApp {
 
 	
 	public static void main(String[] args) {
-//		
-//		Student student = new Student();
-//		Certificate certi = new Certificate();
-//		College college = new  College();
-//		IStudentService ser = new StudentServiceImp();
-//		
-//		
-//		
-//		student.setId(1L);
-//		student.setName("Suraj");
-//		student.setCollegeName("Pillai");
-//		student.setCourse("EXTC");
-//		student.setHallTicketNo(46455L);
-//		student.setQualification("B.E");
-//		student.setRoll(1L);
-//		
-//		certi.setC_id(1);
-//		certi.setCollegeName(student.getCollegeName());
-//		certi.setYear(2021L);
-//		student.setCertificate(certi);
-//		
-//		college.setC_id(3);
-//		college.setCollegeAdmin("XYZ");
-//		college.setCollegeName("Pillai");
-//		college.setLocation("Mumbai");
-//		
-//		student.setCollege_id(college);
-//		
-//		ser.addStudent(student);
+
 //		
 		
-		PlacementManagementSystemClientApp system = new PlacementManagementSystemClientApp();
-//		
-//		
-		system.addStudentData("Aditya", 1L, "Extc", "Pillai", 4524566L, 1L, "B.E", 1L, 2021L);
-		system.addCollegeData(1L, "XYZ", "xyzz", "Location", 1L);
+		PlacementManagementSystemCreateAppTest system = new  PlacementManagementSystemCreateAppTest();
+		
+		
+		system.addStudentData("Vipul", 4L, "Extc", "Pillai", 42568345L, 4L, "B.E", 4L, 2021L);
+		system.addCollegeData(4L, "XYZ2", "xyzz1", "Mumbai", 4L);
 		system.saveStudentData();
-		System.out.println("Done");
 		
+//		College col = new College();
+//		col.setC_id(1);
+//		system.addPlacementData(4L, "3 Dec 2021", "CG", "B.E", "Pillai",2021L);
+//		system.savePlacementData();
+//		System.out.println("Done");
+//		
 		
 		
 		

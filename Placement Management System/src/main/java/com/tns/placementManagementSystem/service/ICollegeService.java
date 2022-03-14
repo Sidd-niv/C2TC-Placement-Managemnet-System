@@ -13,6 +13,8 @@ public interface ICollegeService {
 	
 	public void deleteCollege(long id);
 	
+	public College findCollegeById(Long id);
+	
 	public void schedulePlacement(Placement placement);
 
 }

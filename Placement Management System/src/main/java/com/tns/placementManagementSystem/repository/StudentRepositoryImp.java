@@ -1,12 +1,16 @@
 package com.tns.placementManagementSystem.repository;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
+import javax.persistence.TypedQuery;
 
 import com.tns.placementManagementSystem.entities.*;
 
 
 public class StudentRepositoryImp implements IStudentRepository{
 	
+	// Declaring the EntityManager instance variable
 	private EntityManager entityManager;
 	
 	public StudentRepositoryImp() 
@@ -14,12 +18,16 @@ public class StudentRepositoryImp implements IStudentRepository{
 		entityManager = JPAUtil.getEntityManager();
 	}
 
+	
+	// Create method
 	@Override
 	public void addStudent(Student student) 
 	{
 		entityManager.persist(student);
 	}
 
+	
+	// Update operation 
 	@Override
 	public void updateStudent(Student student) 
 	{
@@ -27,6 +35,7 @@ public class StudentRepositoryImp implements IStudentRepository{
 		
 	}
 
+	// 
 	@Override
 	public Student searchStudentById(long id) {
 		Student student = entityManager.find(Student.class, id);
@@ -34,10 +43,13 @@ public class StudentRepositoryImp implements IStudentRepository{
 	}
 
 	@Override
-	public Student searchStudentByHallTicket(long ticketNo) 
+	public String searchStudentByHallTicket(long ticketNo) 
 	{
-		Student student = entityManager.find(Student.class, ticketNo);
-		return student;
+		String queryString = "select s.name from Student s where s.hallTicketNo =: hall";
+		TypedQuery<String> query = entityManager.createQuery(queryString, String.class);
+		query.setParameter("hall", ticketNo);
+		String hallInfo = query.getSingleResult();
+		return hallInfo;
 	}
 
 	@Override

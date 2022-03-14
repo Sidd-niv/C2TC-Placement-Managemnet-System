@@ -5,12 +5,20 @@ import java.util.List;
 
 import javax.persistence.*;
 
+
+//Below annotation states that, the below class is a table in DB.
 @Entity
 @Table(name="")
 public class College implements Serializable {
 
+	
+	// Defining serializale_id 
 	private static final long serialVersionUID = 1L;
 	
+	
+	//Defining private instance variable
+
+	// With Id annotation we are indicating that this is a primary key field
 	@Id
 	@Column(name="college_id")
 	private long c_id;
@@ -25,11 +33,11 @@ public class College implements Serializable {
 	@Column(name="location")
 	private String location;
 	
-//	@OneToOne(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
-//	@JoinColumn(name="u_id")
+
 	@Column(name="u_id")
 	private Long u_id;
 	
+	// Mapping the relations
 	@OneToMany(mappedBy="college_id")
 	private List<Student> student;
 	
@@ -39,7 +47,7 @@ public class College implements Serializable {
 	
 	
 
-
+	// Defining getter and setter methods to read and write private instance variable.
 	public long getC_id() {
 		return c_id;
 	}

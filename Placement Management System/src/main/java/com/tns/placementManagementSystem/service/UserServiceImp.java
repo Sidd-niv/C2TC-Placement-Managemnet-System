@@ -42,5 +42,11 @@ public class UserServiceImp implements IUserService {
 		
 	}
 
+	@Override
+	public User findUserById(Long id) {
+		User user = dao.findUserById(id);
+		return user;
+	}
+
 
 }

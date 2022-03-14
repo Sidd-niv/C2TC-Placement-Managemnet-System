@@ -12,38 +12,41 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 
-
+//Below annotation states that, the below class is a table in DB.
 @Entity
-@Table(name="Student")
+@Table(name="Placement")
 public class Placement implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 	
 	@Id	// Primary key
 	@Column(name="p_id")
-	private int p_id;
+	private Long p_id;
 	
 	@Column(name="pName")
 	private String pName;
 	
 	@Column(name="pData")
-	private String pDate;
+	private String pData;
 	
 	@Column(name="qualification")
 	private String qualification;
 	
 	@Column(name="Year")
-	private int year;
+	private Long year;
+	
+	@Column(name="collegeName")
+	private String collegeName;
 	
 	@ManyToOne(cascade=CascadeType.ALL, fetch=FetchType.LAZY)
 	@JoinColumn(name="college_id")
 	private College college_id;
 
-	public int getP_id() {
+	public Long getP_id() {
 		return p_id;
 	}
 
-	public void setP_id(int p_id) {
+	public void setP_id(Long p_id) {
 		this.p_id = p_id;
 	}
 
@@ -55,12 +58,12 @@ public class Placement implements Serializable {
 		this.pName = pName;
 	}
 
-	public String getpDate() {
-		return pDate;
+	public String getpData() {
+		return pData;
 	}
 
-	public void setpDate(String pDate) {
-		this.pDate = pDate;
+	public void setpData(String pDate) {
+		this.pData = pData;
 	}
 
 	public String getQualification() {
@@ -71,11 +74,11 @@ public class Placement implements Serializable {
 		this.qualification = qualification;
 	}
 
-	public int getYear() {
+	public Long getYear() {
 		return year;
 	}
 
-	public void setYear(int year) {
+	public void setYear(Long year) {
 		this.year = year;
 	}
 
@@ -85,6 +88,14 @@ public class Placement implements Serializable {
 
 	public void setCollege_id(College college_id) {
 		this.college_id = college_id;
+	}
+
+	public String getCollegeName() {
+		return collegeName;
+	}
+
+	public void setCollegeName(String collegeName) {
+		this.collegeName = collegeName;
 	}
 	
 	

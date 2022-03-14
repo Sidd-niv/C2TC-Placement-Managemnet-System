@@ -10,9 +10,12 @@ import javax.persistence.*;
 @Table(name="Student")
 public class Student implements Serializable{
 	
-
+	// Defining serializale_id 
 	private static final long serialVersionUID = 1L;
 
+	//Defining private instance variable
+
+	// With Id annotation we are indicating that this is a primary key field
 	@Id
 	@Column(name="S_id")
 	private long id;
@@ -32,18 +35,19 @@ public class Student implements Serializable{
 	@Column(name="course")
 	private String course;
 	
-	@OneToOne(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
+	// Forming the associations
+	@OneToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name="cert_id")
 	private Certificate certificate;
 	
 	@Column(name="hallTicket")
 	private long hallTicketNo;
 	
-	@ManyToOne(cascade=CascadeType.ALL, fetch=FetchType.LAZY)
+	@ManyToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name="college_id")
 	private College college_id;
 	
-	
+	// Defining getter and setter methods to read and write private instance variable.
 	public long getId() {
 		return id;
 	}

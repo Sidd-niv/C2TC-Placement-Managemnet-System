@@ -4,12 +4,18 @@ import java.io.Serializable;
 import javax.persistence.*;
 
 
+//Below annotation states that, the below class is a table in DB.
 @Entity
 @Table(name="certificate")
 public class Certificate implements Serializable{
 
+	// Defining serializale_id 
 	private static final long serialVersionUID = 1L;
+
 	
+	//Defining private instance variable
+
+	// With Id annotation we are indicating that this is a primary key field
 	@Id
 	@Column(name="cert_id")
     private long c_id;
@@ -21,9 +27,12 @@ public class Certificate implements Serializable{
 	@Column(name="collegeName")
 	private String collegeName;
 	
+	// Mapping the relations
 	@OneToOne(mappedBy="certificate")
 	private Student student;
 
+	
+	// Defining getter and setter methods to read and write private instance variable.
 	public long getC_id() {
 		return c_id;
 	}

@@ -6,6 +6,8 @@ import com.tns.placementManagementSystem.repository.*;
 
 public class CollegeServiceImp implements ICollegeService {
 
+	
+	
 	private ICollegeRepository dao;
 	
 	public CollegeServiceImp() {
@@ -47,5 +49,12 @@ public class CollegeServiceImp implements ICollegeService {
 		
 		
 	}
+
+	@Override
+	public College findCollegeById(Long id) {
+		College col = dao.findCollegeById(id);
+		return col;	
+	}
+
 
 }

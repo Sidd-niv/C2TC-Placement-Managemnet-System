@@ -11,7 +11,7 @@ public interface IStudentService {
 	
 	public Student searchStudentById(long id);  
 
-	public Student searchStudentByHallTicket(long id); 
+	public String searchStudentByHallTicket(long id); 
 
 	public void deleteStudent(long id); 
 

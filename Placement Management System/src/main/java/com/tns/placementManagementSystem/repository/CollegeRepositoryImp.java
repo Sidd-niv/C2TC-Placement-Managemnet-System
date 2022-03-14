@@ -43,4 +43,10 @@ public class CollegeRepositoryImp implements ICollegeRepository {
 		entityManager.getTransaction().commit();
 	}
 
+	@Override
+	public College findCollegeById(Long id) {
+		College col = entityManager.find(College.class, id);
+		return col;
+	}
+
 }
