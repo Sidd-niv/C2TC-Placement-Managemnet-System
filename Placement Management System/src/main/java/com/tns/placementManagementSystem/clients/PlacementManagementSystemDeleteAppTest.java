@@ -1,5 +1,6 @@
 package com.tns.placementManagementSystem.clients;
 
+import com.tns.placementManagementSystem.entities.College;
 import com.tns.placementManagementSystem.entities.Student;
 import com.tns.placementManagementSystem.service.CollegeServiceImp;
 import com.tns.placementManagementSystem.service.ICollegeService;
@@ -20,7 +21,9 @@ public class PlacementManagementSystemDeleteAppTest {
 		IUserService userService       = new UserServiceImp();
 
 		
-		studentService.deleteStudent(4);
+		Student student = new Student();
+		student = studentService.searchStudentById(1L);
+		studentService.deleteStudent(student);
 //		collegeService.deleteCollege(0);
 //		placeService.cancelPlacement(0);
 		System.out.println("Done");

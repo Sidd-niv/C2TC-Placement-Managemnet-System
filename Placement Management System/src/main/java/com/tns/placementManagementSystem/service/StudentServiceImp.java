@@ -54,9 +54,9 @@ public class StudentServiceImp implements IStudentService{
 
 	// Delete Operation
 	@Override
-	public void deleteStudent(long id) {
+	public void deleteStudent(Student student) {
 		dao.beginTrancsaction();
-		dao.deleteStudent(id);
+		dao.deleteStudent(student);
 		dao.commitTransaction();
 		
 	}

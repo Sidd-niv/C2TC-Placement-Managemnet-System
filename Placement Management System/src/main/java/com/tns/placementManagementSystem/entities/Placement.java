@@ -26,8 +26,8 @@ public class Placement implements Serializable {
 	@Column(name="pName")
 	private String pName;
 	
-	@Column(name="pData")
-	private String pData;
+	@Column(name="pDate")
+	private String pDate;
 	
 	@Column(name="qualification")
 	private String qualification;
@@ -58,12 +58,12 @@ public class Placement implements Serializable {
 		this.pName = pName;
 	}
 
-	public String getpData() {
-		return pData;
+	public String getpDate() {
+		return pDate;
 	}
 
-	public void setpData(String pDate) {
-		this.pData = pData;
+	public void setpDate(String pDate) {
+		this.pDate = pDate;
 	}
 
 	public String getQualification() {

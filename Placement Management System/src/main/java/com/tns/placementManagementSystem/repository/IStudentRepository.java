@@ -19,7 +19,7 @@ public interface IStudentRepository {
 	
 	public String searchStudentByHallTicket(long ticketNo);
 	
-	public void deleteStudent(long id);
+	public void deleteStudent(Student student);
 
 	public void beginTrancsaction();
 	

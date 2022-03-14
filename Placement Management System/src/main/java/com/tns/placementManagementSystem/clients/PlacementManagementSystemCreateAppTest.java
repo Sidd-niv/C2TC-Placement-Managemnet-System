@@ -90,7 +90,7 @@ public class PlacementManagementSystemCreateAppTest {
 	{
 		placement.setCollege_id(college);
 		placement.setP_id(pid);
-		placement.setpData(date);
+		placement.setpDate(date);
 		placement.setpName(pname);
 		placement.setQualification(qual);
 		placement.setCollegeName(pcol);

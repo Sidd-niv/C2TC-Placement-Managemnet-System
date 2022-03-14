@@ -13,6 +13,6 @@ public interface IStudentService {
 
 	public String searchStudentByHallTicket(long id); 
 
-	public void deleteStudent(long id); 
+	public void deleteStudent(Student student); 
 
 }

@@ -15,17 +15,24 @@ public class TestApp {
 		
 		PlacementManagementSystemCreateAppTest system = new  PlacementManagementSystemCreateAppTest();
 		
+//		String name, Long id, String couserName, String collName, Long hallTicket, Long roll, String qual, Long certId, Long year
+		system.addStudentData("Siddhant", 3L, "Extc", "Pillai", 103L, 3L, "B.E", 3L, 2021L);
 		
-		system.addStudentData("Vipul", 4L, "Extc", "Pillai", 42568345L, 4L, "B.E", 4L, 2021L);
-		system.addCollegeData(4L, "XYZ2", "xyzz1", "Mumbai", 4L);
+		
+//		Long collId, String adminName, String collName, String loc, Long uid
+		system.addCollegeData(3L, "XYZ1", "xyzz1", "Mumbai", 1L);
 		system.saveStudentData();
+//		
+//		System.out.println("Done");
 		
 //		College col = new College();
-//		col.setC_id(1);
-//		system.addPlacementData(4L, "3 Dec 2021", "CG", "B.E", "Pillai",2021L);
+//		col.setC_id(2);
+//		
+//		Long pid, String date, String pname, String qual, String pcol,Long year
+//		system.addPlacementData(2L, "3 Dec 2021", "TCS", "B.E", "Pillai",2021L);
 //		system.savePlacementData();
 //		System.out.println("Done");
-//		
+		
 		
 		
 		

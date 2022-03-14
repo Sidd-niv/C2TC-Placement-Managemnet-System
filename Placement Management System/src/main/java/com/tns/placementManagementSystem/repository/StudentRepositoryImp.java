@@ -53,11 +53,9 @@ public class StudentRepositoryImp implements IStudentRepository{
 	}
 
 	@Override
-	public void deleteStudent(long id)
+	public void deleteStudent(Student student)
 	{
-		Student student = entityManager.find(Student.class, id);
 		entityManager.remove(student);
-	
 	}
 
 	@Override
